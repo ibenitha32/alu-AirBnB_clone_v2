@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-"""Test for db storage"""
-
 import unittest
 import models
 from models.user import User
@@ -27,19 +25,19 @@ class TestDBStorage(unittest.TestCase):
 
     def test_user(self):
         """ Tests user """
-        user = User(name="Chyna")
+        user = User(name="Abissa")
         user.save()
         self.assertTrue(user.id in self.storage.all())
-        self.assertEqual(user.name, "Chyna")
+        self.assertEqual(user.name, "Abissa")
 
     def test_city(self):
         """ test user """
-        city = City(name="Batch")
+        city = City(name="Maradi")
         state = State()
         city.state_id = state.id
         city.save()
         self.assertTrue(city.id in self.storage.all())
-        self.assertEqual(city.name, "Batch")
+        self.assertEqual(city.name, "Maradi")
 
     def test_state(self):
         """ test state"""
