@@ -2,16 +2,33 @@
 <HTML lang="en">
 
 <HEAD>
+      <!-- This is the head section, which contains metadata about the document. -->
       <TITLE>HBNB</TITLE>
 </HEAD>
 
 <BODY>
+      <!-- This is the body section, where the main content of the document is located. -->
+
       <H1>States</H1>
+      <!-- This is a level 1 heading displaying "States." -->
+
       <UL>
+            <!-- This is an unordered list (bullet points). -->
+            
             {% for state in states.values()|sort(attribute="name") %}
-            <LI>{{ state.id }}: <B>{{ state.name }}</B></LI>
+            <!-- This is a Jinja2 template for iterating through a list of states, sorted by name. -->
+            
+            <LI>
+                  <!-- This is a list item within the unordered list. -->
+                  {{ state.id }}: <B>{{ state.name }}</B>
+                  <!-- This code displays the state's ID and name. The name is enclosed in bold tags. -->
+            </LI>
+            
             {% endfor %}
+            <!-- This marks the end of the for loop. -->
+            
       </UL>
+      <!-- This closes the unordered list. -->
 </BODY>
 
 </HTML>
